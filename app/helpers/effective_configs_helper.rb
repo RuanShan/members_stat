@@ -1,0 +1,2 @@
+module EffectiveConfigsHelper
+end

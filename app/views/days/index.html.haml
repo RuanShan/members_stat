@@ -1,0 +1,17 @@
+- title("days")
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      - @attributes.each do | attribute |
+        %th= attribute
+
+  %tbody
+    = content_tag_for(:tr, @customers) do |customer| day = customer.day
+      %td= customer.name
+      %td= l(customer.bonus_started_at, :format => :short)
+      %td{:align => "center"}
+
+    - if(@customers.length == 0)
+      %tr
+        %td{:align => "center", :colspan => "3"} Nenhum registro foi encontrado

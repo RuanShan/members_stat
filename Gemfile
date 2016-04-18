@@ -27,11 +27,11 @@ gem "select2-rails"
 gem 'bootstrap_form'
 gem 'will_paginate-bootstrap'
 gem 'will-paginate-i18n'
-gem 'ouvrages_scaffold'
+#gem 'ouvrages_scaffold'
 gem "haml-rails", "~> 0.9"
 gem 'active_scaffold'
 gem 'flexi_generators'
-
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'better_errors'

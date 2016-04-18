@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20160416112940) do
     t.string   "name"
     t.string   "id_num"
     t.string   "cellphone"
-    t.integer  "status",           default: 0
-    t.datetime "bonus_started_at"
-    t.datetime "kickout_at"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "status",      default: 0
+    t.decimal  "payback",     default: 0.0
+    t.integer  "hold_shares", default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "effective_configs", force: :cascade do |t|
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 20160416112940) do
     t.integer  "customer_id"
     t.integer  "unit"
     t.decimal  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "buy_at"
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|

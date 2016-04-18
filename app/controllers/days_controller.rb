@@ -1,7 +1,8 @@
 class DaysController < ApplicationController
 
   def index
-    @attributes= [:customer_name, :customer_created_at]
-    @customers = Customer.bonus.paginate(:page => params[:page])
+    @selected_datetime = DateTime.current
+    @attributes= [:customer_name, :bonus, :daily_bonus]
+    @customers = Customer.bonus_stage.paginate(:page => params[:page])
   end
 end

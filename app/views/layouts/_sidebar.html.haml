@@ -1,18 +1,9 @@
 %ul.nav.nav-sidebar
-  %li
+  %li{ class:"#{'active' if current_page?( days_index_path ) }" }
     = link_to "Day", days_index_path
-  %li.active
+  %li{ class:"#{'active' if current_page?( customers_path ) }" }
     = link_to Customer.model_name.human, customers_path
-  %li
+  %li{ class:"#{'active' if current_page?( sales_path ) }" }
     = link_to Sale.model_name.human, sales_path
-  %li
-    %a{:href => "#"} Menu
-%ul.nav.nav-sidebar
-  %li
-    %a{:href => "#"} Menu
-  %li
-    %a{:href => "#"} Menu
-  %li
-    %a{:href => "#"} Menu
-  %li
-    %a{:href => "#"} Menu
+  %li{ class:"#{'active' if current_page?( effective_configs_path ) }" }
+    = link_to EffectiveConfig.model_name.human, effective_configs_path

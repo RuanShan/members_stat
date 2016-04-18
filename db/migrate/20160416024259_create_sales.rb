@@ -4,8 +4,8 @@ class CreateSales < ActiveRecord::Migration
       t.references :customer
       t.integer :unit
       t.decimal :price
-      t.datetime :bonus_started_at
-      t.datetime :kickout_at
+      t.datetime :buy_at
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end

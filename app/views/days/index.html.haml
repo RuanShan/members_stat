@@ -9,7 +9,8 @@
   %tbody
     = content_tag_for(:tr, @customers) do |customer| day = customer.day
       %td= customer.name
-      %td= l(customer.bonus_started_at, :format => :short)
+      %td= customer.day( @selected_datetime ).bonus
+      %td= customer.day( @selected_datetime ).daily_bonus
       %td{:align => "center"}
 
     - if(@customers.length == 0)

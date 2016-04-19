@@ -32,6 +32,7 @@ gem "haml-rails", "~> 0.9"
 gem 'active_scaffold'
 gem 'flexi_generators'
 gem 'bootstrap-datepicker-rails'
+#gem 'acts_as_paranoid'
 
 group :development do
   gem 'better_errors'

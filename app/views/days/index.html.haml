@@ -1,18 +1,4 @@
-- title("days")
+.datepicker-container
 
-%table.table.table-bordered.table-striped
-  %thead
-    %tr
-      - @attributes.each do | attribute |
-        %th= attribute
-
-  %tbody
-    = content_tag_for(:tr, @customers) do |customer| day = customer.day
-      %td= customer.name
-      %td= customer.day( @selected_datetime ).bonus
-      %td= customer.day( @selected_datetime ).daily_bonus
-      %td{:align => "center"}
-
-    - if(@customers.length == 0)
-      %tr
-        %td{:align => "center", :colspan => "3"} Nenhum registro foi encontrado
+:javascript
+  var  g_days = #{ Day.during_year.pluck(:free_date).to_json }

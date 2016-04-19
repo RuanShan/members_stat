@@ -42,6 +42,6 @@ module LayoutHelper
   end
 
   def app_name
-    Rails.application.class.to_s.split("::").first
+    "时代浩博会员统计系统"
   end
 end

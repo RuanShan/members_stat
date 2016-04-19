@@ -1,6 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(".sale_customers").select2({
   ajax: {
@@ -31,6 +28,6 @@ $(".sale_customers").select2({
   },
   escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
   minimumInputLength: 1,
-  templateResult: formatRepo, // omitted for brevity, see the source of this page
-  templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+  //templateResult: formatRepo, // omitted for brevity, see the source of this page
+  //templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
 });

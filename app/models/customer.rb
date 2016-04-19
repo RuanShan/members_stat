@@ -6,7 +6,7 @@ class Customer < ActiveRecord::Base
   }
 
   def day( datetime = DateTime.current)
-    Day.new( self, datetime )
+    CustomerDay.new( self, datetime )
   end
 
   private

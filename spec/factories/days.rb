@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :day do
-    money "9.99"
+    free_date "2016-04-19"
+    deleted_at "2016-04-19"
   end
 
 end

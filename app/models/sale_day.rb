@@ -7,7 +7,9 @@ class SaleDay
     self.datetime = datetime.in_time_zone
   end
 
+  # bonus so far
   def bonus
+    return EffectiveConfig.current_kick_out_until * sale.unit  if kickout?
     bonus_days * daily_bonus
   end
 
@@ -15,6 +17,7 @@ class SaleDay
   def bonus_days
     #TODO exclude no bonus day
     seconds = (self.datetime - sale.buy_at.since( EffectiveConfig.current_pending_days_after_sale.days ))
+    seconds -= free_day_count_from_start_to_selected_date*3600*24
     #handle negtive value
     seconds >0 ? (seconds/3600/24).ceil : 0
   end
@@ -37,4 +40,7 @@ class SaleDay
     bonus_days == 0
   end
 
+  def free_day_count_from_start_to_selected_date
+    Day.during_dates( sale.buy_at, self.datetime ).count
+  end
 end

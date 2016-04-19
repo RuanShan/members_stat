@@ -14,16 +14,16 @@ class EffectiveConfig < ActiveRecord::Base
 
   # 每一單，每天反利
   def self.current_bonus_per_share
-    self.class.bonus_per_share.first.casted_value rescue DEFAULT_BONUS_PER_SHARE
+    ( bonus_per_share.first.try(:casted_value) || DEFAULT_BONUS_PER_SHARE)
   end
 
   # 每一單，反利退出值
   def self.current_kick_out_until
-    self.class.kick_out_until.first.casted_value rescue  DEFAULT_KICK_OUT_UNTIL
+    (kick_out_until.first.try(:casted_value) ||  DEFAULT_KICK_OUT_UNTIL)
   end
 
   # 每一單，成交多久後反利
   def self.current_pending_days_after_sale
-    self.class.pending_days_after_sale.first.casted_value rescue DEFAULT_PENDING_DAYS_AFTER_SALE
+    (pending_days_after_sale.first.try(:casted_value) || DEFAULT_PENDING_DAYS_AFTER_SALE)
   end
 end

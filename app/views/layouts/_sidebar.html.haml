@@ -1,6 +1,6 @@
 %ul.nav.nav-sidebar
-  %li{ class:"#{'active' if current_page?( days_index_path ) }" }
-    = link_to "Day", days_index_path
+  %li{ class:"#{'active' if current_page?( days_path ) }" }
+    = link_to "Day", days_path
   %li{ class:"#{'active' if current_page?( customers_path ) }" }
     = link_to Customer.model_name.human, customers_path
   %li{ class:"#{'active' if current_page?( sales_path ) }" }

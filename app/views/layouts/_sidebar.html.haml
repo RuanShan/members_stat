@@ -1,9 +1,11 @@
 %ul.nav.nav-sidebar
-  %li{ class:"#{'active' if current_page?( days_path ) }" }
-    = link_to "Day", days_path
+  %li{ class:"#{'active' if current_page?( root_path ) }" }
+    = link_to "会员收益", root_path
   %li{ class:"#{'active' if current_page?( customers_path ) }" }
     = link_to Customer.model_name.human, customers_path
   %li{ class:"#{'active' if current_page?( sales_path ) }" }
     = link_to Sale.model_name.human, sales_path
   %li{ class:"#{'active' if current_page?( effective_configs_path ) }" }
     = link_to EffectiveConfig.model_name.human, effective_configs_path
+  %li{ class:"#{'active' if current_page?( days_path ) }" }
+    = link_to "Day", days_path

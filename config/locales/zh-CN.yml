@@ -1,0 +1,28 @@
+zh-CN:
+  activerecord:
+    models:
+      customer: '客户'
+      sale: '销售记录'
+      effective_config: '配置'
+    attributes:
+      customer:
+        name: "姓名"
+        cellphone: '手机'
+        id_num: '身份证'
+      sale:
+        buy_at: "销售日期"
+        price: '总额'
+        unit: '数量'
+        customer: '客户'
+
+  customers:
+    index:
+      confirm: '确认'
+      title: '会员'
+    show:
+      confirm: '确认'
+    form:
+      submit: '提交'
+  sales:
+    form:
+      submit: '提交'

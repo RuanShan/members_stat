@@ -1,0 +1,27 @@
+.page-header
+  = link_to new_sale_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Sale
+  %h1 Listing sales
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Customer
+        %th Unit
+        %th Price
+        %th
+        %th
+        %th
+
+    %tbody
+      - @sales.each do |sale|
+        %tr
+          %td= sale.customer_id
+          %td= sale.unit
+          %td= sale.price
+          %td= link_to 'Show', sale
+          %td= link_to 'Edit', edit_sale_path(sale)
+          %td= link_to 'Destroy', sale, data: { confirm: 'Are you sure?' }, method: :delete
+= paginate @sales 

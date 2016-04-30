@@ -1,0 +1,10 @@
+= simple_form_for(@daily_setting) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :ename
+    = f.input :effect_value
+    = f.input :effect_at
+
+  .form-actions
+    = f.button :submit

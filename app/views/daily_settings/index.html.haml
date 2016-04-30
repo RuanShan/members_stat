@@ -1,0 +1,26 @@
+.page-header
+  = link_to new_daily_setting_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Daily setting
+  %h1 Listing daily_settings
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Ename
+        %th Effect value
+        %th Effect at
+        %th
+        %th
+        %th
+
+    %tbody
+      - @daily_settings.each do |daily_setting|
+        %tr
+          %td= daily_setting.ename
+          %td= daily_setting.effect_value
+          %td= daily_setting.effect_at
+          %td= link_to 'Show', daily_setting
+          %td= link_to 'Edit', edit_daily_setting_path(daily_setting)
+          %td= link_to 'Destroy', daily_setting, data: { confirm: 'Are you sure?' }, method: :delete

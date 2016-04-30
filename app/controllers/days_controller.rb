@@ -1,6 +1,14 @@
 class DaysController < ApplicationController
   before_action :set_day, only: [:show, :edit, :update, :destroy]
 
+  def select
+    q = params[:q]||{}
+    #TODO catch to_date
+    @selected_date = Time.zone.parse( q[:date]||'' ) || Time.zone.now
+
+    @attributes= [:customer_name, :bonus, :daily_bonus]
+    @customers = Customer.bonus_stage.page(params[:page])
+  end
   #
   def create
 
@@ -27,6 +35,7 @@ class DaysController < ApplicationController
       render :edit
     end
   end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_day

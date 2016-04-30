@@ -1,4 +1,4 @@
-class EffectiveConfig < ActiveRecord::Base
+class DailySetting < ActiveRecord::Base
 
   DEFAULT_BONUS_PER_SHARE = 7.0
   DEFAULT_KICK_OUT_UNTIL = 2890

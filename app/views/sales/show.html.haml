@@ -1,0 +1,16 @@
+.page-header
+  = link_to sales_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_sale_path(@sale), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show sale
+
+%dl.dl-horizontal
+  %dt Customer:
+  %dd= @sale.customer_id
+  %dt Unit:
+  %dd= @sale.unit
+  %dt Price:
+  %dd= @sale.price

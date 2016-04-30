@@ -4,7 +4,7 @@ FactoryGirl.define do
     price 890
 
     factory :sale_status_bonus do
-      buy_at DateTime.current.ago( EffectiveConfig.current_pending_days_after_sale.days)
+      buy_at DateTime.current.ago(7)
     end
 
     factory :sale_status_pending do

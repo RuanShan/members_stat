@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem "crummy", "~> 1.8.0"
@@ -24,15 +25,16 @@ gem 'devise'
 gem 'high_voltage'
 gem 'pundit'
 gem "select2-rails"
-gem 'bootstrap_form'
-gem 'will_paginate-bootstrap'
-gem 'will-paginate-i18n'
+#gem 'bootstrap_form'
+#gem 'will_paginate-bootstrap'
+#gem 'will-paginate-i18n'
 #gem 'ouvrages_scaffold'
 gem "haml-rails", "~> 0.9"
-gem 'active_scaffold'
-gem 'flexi_generators'
+gem 'bootstrap-generators', '~> 3.3.4'
 gem 'bootstrap-datepicker-rails'
+gem 'simple_form'
 #gem 'acts_as_paranoid'
+gem 'kaminari'
 
 group :development do
   gem 'better_errors'
@@ -42,7 +44,7 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
+  #gem 'faker'
   gem 'rspec-rails'
 end
 group :test do

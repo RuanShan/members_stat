@@ -1,0 +1,28 @@
+.page-header
+  .pull-right
+    = simple_form_for('q',path: select_days_path, html:{ class: 'form-inline'}, method: :get ) do |f|
+      .input-group
+        =f.text_field :date, value: @selected_date.to_date , class: 'form-control datepicker'
+        %span.input-group-addon
+          %i.glyphicon.glyphicon-calendar
+      =f.button :submit, 'submit'
+  %h1 Daily Statistics
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        - @attributes.each do | attribute |
+          %th= attribute
+
+    %tbody
+      = content_tag_for(:tr, @customers, class: 'record') do |customer| day = customer.day
+        %td= customer.name
+        %td= customer.day( @selected_date ).bonus
+        %td= customer.day( @selected_date ).daily_bonus
+        %td{:align => "center"}
+
+      - if(@customers.length == 0)
+        %tr
+          %td{:align => "center", :colspan => "3"} No record
+= paginate @customers

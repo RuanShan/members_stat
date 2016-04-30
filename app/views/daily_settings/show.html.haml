@@ -1,0 +1,16 @@
+.page-header
+  = link_to daily_settings_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_daily_setting_path(@daily_setting), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show daily_setting
+
+%dl.dl-horizontal
+  %dt Ename:
+  %dd= @daily_setting.ename
+  %dt Effect value:
+  %dd= @daily_setting.effect_value
+  %dt Effect at:
+  %dd= @daily_setting.effect_at

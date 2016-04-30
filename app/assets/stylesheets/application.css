@@ -9,11 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require flexi/bootstrap
- *= require flexi/bootstrap-theme
+ *= require bootstrap-generators
  *= require bootstrap.datepicker
  *= require select2
- *= require active_scaffold
  *= require layout
  *= require_tree .
 */

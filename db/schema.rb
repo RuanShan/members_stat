@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419073627) do
+ActiveRecord::Schema.define(version: 20160430015446) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20160419073627) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "daily_settings", force: :cascade do |t|
+    t.integer  "ename",        default: 0
+    t.string   "effect_value"
+    t.date     "effect_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "days", force: :cascade do |t|
     t.datetime "free_date"
     t.string   "deleted_at"
@@ -32,12 +40,12 @@ ActiveRecord::Schema.define(version: 20160419073627) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "effective_configs", force: :cascade do |t|
-    t.integer  "ename",        default: 0
-    t.string   "effect_value"
-    t.date     "effect_at"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sales", force: :cascade do |t|

@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  root :to => 'dashboard#index'
-  get 'dashboard/index'
+  resources :daily_settings
+  resources :sales
+  resources :customers
+  resources :posts
+  resources :days do
+    collection do
+      get :select
+    end
+  end
 
-  resources :days
-  resources :sales do as_routes end
-  resources :customers do as_routes end
-  resources :effective_configs do as_routes end
+  root :to => 'days#select'
+
   devise_for :users
   resources :users
 end

@@ -1,0 +1,16 @@
+.page-header
+  = link_to customers_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_customer_path(@customer), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show customer
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @customer.name
+  %dt Id num:
+  %dd= @customer.id_num
+  %dt Cellphone:
+  %dd= @customer.cellphone

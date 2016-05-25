@@ -5,7 +5,7 @@
     = link_to Customer.model_name.human, customers_path
   %li{ class:"#{'active' if current_page?( sales_path ) }" }
     = link_to Sale.model_name.human, sales_path
+  %li{ class:"#{'active' if current_page?( days_path ) }" }
+    = link_to Day.model_name.human, days_path
   %li{ class:"#{'active' if current_page?( daily_settings_path ) }" }
     = link_to DailySetting.model_name.human, daily_settings_path
-  %li{ class:"#{'active' if current_page?( days_path ) }" }
-    = link_to "Day", days_path

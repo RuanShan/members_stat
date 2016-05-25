@@ -4,5 +4,5 @@ class Day < ActiveRecord::Base
 
   scope :after_date, ->(date){  where(['free_date>=?', date ]) }
 
-  scope :during_dates, ->( start_date, end_date){ where(['free_date>=? and free_date < ?', start_date, end_date ]) }
+  scope :during_dates, ->( start_date, end_date){ where(['free_date>? and free_date <= ?', start_date, end_date ]) }
 end

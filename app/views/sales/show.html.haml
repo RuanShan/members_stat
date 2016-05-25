@@ -5,12 +5,12 @@
   = link_to edit_sale_path(@sale), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Edit
-  %h1 Show sale
+  %h1= t 'show_sale'
 
 %dl.dl-horizontal
-  %dt Customer:
-  %dd= @sale.customer_id
-  %dt Unit:
+  %dt= Sale.human_attribute_name(:customer)
+  %dd= @sale.customer.name
+  %dt= Sale.human_attribute_name(:unit)
   %dd= @sale.unit
-  %dt Price:
+  %dt= Sale.human_attribute_name(:price)
   %dd= @sale.price

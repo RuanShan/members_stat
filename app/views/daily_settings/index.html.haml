@@ -1,16 +1,16 @@
 .page-header
   = link_to new_daily_setting_path, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
-    New Daily setting
-  %h1 Listing daily_settings
+    =t 'new_daily_setting'
+  %h1=  t 'title.listing_daily_settings'
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Ename
-        %th Effect value
-        %th Effect at
+        %th= DailySetting.human_attribute_name(:ename)
+        %th= DailySetting.human_attribute_name(:effect_value)
+        %th= DailySetting.human_attribute_name(:effect_at)
         %th
         %th
         %th
@@ -18,7 +18,7 @@
     %tbody
       - @daily_settings.each do |daily_setting|
         %tr
-          %td= daily_setting.ename
+          %td= t( daily_setting.ename, scope: [:enums, :daily_setting, :ename] ) 
           %td= daily_setting.effect_value
           %td= daily_setting.effect_at
           %td= link_to 'Show', daily_setting

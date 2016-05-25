@@ -1,19 +1,33 @@
 zh-CN:
   activerecord:
     models:
-      customer: '客户'
+      customer: '会员'
       sale: '销售记录'
-      effective_config: '配置'
+      daily_setting: '反利基本配置'
+      day: '反利日期配置'
     attributes:
       customer:
         name: "姓名"
         cellphone: '手机'
         id_num: '身份证'
+        bank_name: '银行'
+        bank_num: '银行卡号'
       sale:
         buy_at: "销售日期"
         price: '总额'
         unit: '数量'
-        customer: '客户'
+        customer: '会员'
+      daily_setting:
+        ename: 配置名称
+        effect_value: 数值
+        effect_at: 生效日期
+  action:
+    show: '浏览'
+    edit: 编辑
+    destroy: '删除'
+  customer_name: 会员
+  bonus: 收益
+  daily_bonus: 当日收益
 
   customers:
     index:
@@ -23,6 +37,30 @@ zh-CN:
       confirm: '确认'
     form:
       submit: '提交'
+  enums:
+    daily_setting:
+      ename:
+        bonus_per_share: 每单每天反利
+        kick_out_until: 每单退出收益
+        pending_days_after_sale: 下单后返利开始时间
+
+  editing_customer: '编辑用戶'
+  editing_daily_setting: '编辑反利配置'
+  editing_sale: '编辑订单'
+  new_customer: '新建用戶'
+  new_daily_setting: '编辑反利配置'
+  new_sale: '新建订单'
+  show_customer: '用戶信息'
+  show_daily_setting: '反利配置信息'
+  show_sale: '订单信息'
   sales:
     form:
       submit: '提交'
+  successfully_created: 创建成功
+  successfully_removed: 刪除成功
+  title:
+    daily_statistics: 每日统计
+    listing_customers: 会员列表
+    listing_sales: 订单列表
+    listing_daily_settings: '反利配置信息列表'
+    select_free_day: '请设置不反利日期，选择的表示当前日期不反利'

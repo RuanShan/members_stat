@@ -1,16 +1,16 @@
 .page-header
   = link_to new_customer_path, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
-    New Customer
-  %h1 Listing customers
+    =t 'new_customer'
+  %h1= t 'title.listing_customers'
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Name
-        %th Id num
-        %th Cellphone
+        %th= Customer.human_attribute_name(:name)
+        %th= Customer.human_attribute_name(:id_num)
+        %th= Customer.human_attribute_name(:cellphone)
         %th
         %th
         %th
@@ -21,7 +21,7 @@
           %td= customer.name
           %td= customer.id_num
           %td= customer.cellphone
-          %td= link_to 'Show', customer
-          %td= link_to 'Edit', edit_customer_path(customer)
-          %td= link_to 'Destroy', customer, data: { confirm: 'Are you sure?' }, method: :delete
-= paginate @customers 
+          %td= link_to t('action.show'), customer
+          %td= link_to t('action.edit'), edit_customer_path(customer)
+          %td= link_to t('action.destroy'), customer, data: { confirm: 'Are you sure?' }, method: :delete
+= paginate @customers

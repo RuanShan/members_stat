@@ -5,15 +5,15 @@
         =f.text_field :date, value: @selected_date.to_date , class: 'form-control datepicker'
         %span.input-group-addon
           %i.glyphicon.glyphicon-calendar
-      =f.button :submit, 'submit'
-  %h1 Daily Statistics
+      =f.button :submit, '提交'
+  %h1= t 'title.daily_statistics'
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         - @attributes.each do | attribute |
-          %th= attribute
+          %th= t attribute
 
     %tbody
       = content_tag_for(:tr, @customers, class: 'record') do |customer| day = customer.day

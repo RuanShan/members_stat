@@ -5,12 +5,12 @@
   = link_to edit_daily_setting_path(@daily_setting), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Edit
-  %h1 Show daily_setting
+  %h1= t 'show_daily_setting'
 
 %dl.dl-horizontal
-  %dt Ename:
-  %dd= @daily_setting.ename
-  %dt Effect value:
+  %dt= DailySetting.human_attribute_name(:ename)
+  %dd= t( @daily_setting.ename, scope: [:enums, :daily_setting, :ename] )
+  %dt= DailySetting.human_attribute_name(:effect_value)
   %dd= @daily_setting.effect_value
-  %dt Effect at:
+  %dt= DailySetting.human_attribute_name(:effect_at)
   %dd= @daily_setting.effect_at

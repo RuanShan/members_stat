@@ -5,12 +5,12 @@
   = link_to edit_customer_path(@customer), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     Edit
-  %h1 Show customer
+  %h1= t 'show_customer'
 
 %dl.dl-horizontal
-  %dt Name:
+  %dt= Customer.human_attribute_name(:name)
   %dd= @customer.name
-  %dt Id num:
+  %dt= Customer.human_attribute_name(:id_num)
   %dd= @customer.id_num
-  %dt Cellphone:
+  %dt= Customer.human_attribute_name(:cellphone)
   %dd= @customer.cellphone

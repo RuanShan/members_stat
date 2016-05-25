@@ -33,6 +33,7 @@ gem "haml-rails", "~> 0.9"
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
+gem 'enum_help'
 #gem 'acts_as_paranoid'
 gem 'kaminari'
 

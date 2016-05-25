@@ -4,7 +4,7 @@ class DailySetting < ActiveRecord::Base
   DEFAULT_KICK_OUT_UNTIL = 2890
   DEFAULT_PENDING_DAYS_AFTER_SALE = 5
 
-  enum ename: { bonus_per_share: 0, kick_out_until: 1, pending_days_after_sale: 2, no_bonus_date: 3 }
+  enum ename: { bonus_per_share: 0, kick_out_until: 1, pending_days_after_sale: 2 }
 
   default_scope { order('effect_at desc') }
 
